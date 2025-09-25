@@ -3,243 +3,618 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gio Startup - Business Consulting Firm</title>
-    <!-- Bootstrap CSS for responsive design -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <!-- Custom CSS for professional styling -->
+    <title>Gio Startup - Business Consulting & Startup Funding</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
     <style>
+        /* CSS Reset and Global Styles */
+        :root {
+            --primary-dark-green: #0d3d3f;
+            --secondary-accent-green: #e0f2f1;
+            --cta-green: #26a69a;
+            --cta-hover-green: #00897b;
+            --text-light: #ffffff;
+            --text-dark: #333;
+            --text-secondary: #555;
+            --card-dark-bg: #0d3d3f;
+            --card-light-bg: #e8f5e9;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f8f9fa;
-            color: #333;
+            font-family: 'Poppins', sans-serif;
+            background-color: #f9fbfb;
+            color: var(--text-dark);
+            line-height: 1.6;
         }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        h1, h2, h3 {
+            font-weight: 700;
+            color: var(--primary-dark-green);
+        }
+
+        h1 {
+            font-size: 3rem;
+            line-height: 1.2;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        h2 span {
+            color: var(--cta-green);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--cta-green);
+            color: var(--text-light);
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: var(--cta-hover-green);
+        }
+
+        /* Header & Navigation */
+        .header {
+            background-color: var(--primary-dark-green);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
         .navbar {
-            background-color: #212529;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
-        .navbar-brand img {
-            height: 40px;
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--text-light);
+            text-decoration: none;
         }
-        .hero {
-            background-color: #212529;
+        
+        .logo img {
+            height: 40px; /* Adjust logo height */
+            vertical-align: middle;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin-left: 30px;
+        }
+
+        .nav-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--cta-green);
+        }
+        
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            font-size: 24px;
             color: white;
+        }
+
+        /* Hero Section */
+        .hero {
+            background-color: var(--primary-dark-green);
+            color: var(--text-light);
             padding: 100px 0;
             text-align: center;
         }
-        .section {
-            padding: 60px 0;
-        }
-        .service-card {
-            background-color: white;
-            border: 1px solid #dee2e6;
-            border-radius: 8px;
-            padding: 20px;
+
+        .hero h1 {
+            color: var(--text-light);
             margin-bottom: 20px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
         }
+        
+        .hero h1 span {
+            color: var(--cta-green);
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            opacity: 0.9;
+        }
+
+        /* Challenges Section */
+        .challenges-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .challenge-card {
+            background-color: var(--card-dark-bg);
+            color: var(--text-light);
+            padding: 40px 30px;
+            border-radius: 15px;
+            text-align: left;
+        }
+        
+        .challenge-card .icon {
+            font-size: 2.5rem;
+            color: var(--cta-green);
+            margin-bottom: 20px;
+        }
+
+        .challenge-card h3 {
+            color: var(--text-light);
+            margin-bottom: 10px;
+            font-size: 1.4rem;
+        }
+        
+        .challenge-card p {
+            opacity: 0.8;
+            margin-bottom: 20px;
+        }
+        
+        .challenge-card .stat {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--cta-green);
+            line-height: 1;
+        }
+        
+        .challenge-card .stat-label {
+            opacity: 0.8;
+            font-size: 0.9rem;
+        }
+
+        /* Services Section */
+        #services {
+            background-color: #ffffff;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+
+        .service-card {
+            background-color: var(--card-light-bg);
+            padding: 30px;
+            border-radius: 15px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
         .service-card:hover {
             transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
         }
-        .core-value {
+
+        .service-card .icon {
+            font-size: 2rem;
+            color: var(--primary-dark-green);
+            margin-bottom: 15px;
+        }
+        
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .service-card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .service-card ul li {
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 25px;
+            color: var(--text-secondary);
+        }
+        
+        .service-card ul li::before {
+            content: '\f058'; /* Font Awesome check-circle icon */
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            color: var(--cta-green);
+            position: absolute;
+            left: 0;
+            top: 2px;
+        }
+        
+        /* Why Us Section */
+        .why-us-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+        
+        .why-us-list {
+            flex: 1;
+        }
+
+        .why-us-list ul {
+            list-style: none;
+        }
+
+        .why-us-list li {
+            font-size: 1.1rem;
             margin-bottom: 20px;
+            display: flex;
+            align-items: flex-start;
         }
-        .footer {
-            background-color: #212529;
-            color: white;
-            padding: 40px 0;
+
+        .why-us-list .icon {
+            color: var(--cta-green);
+            font-size: 1.5rem;
+            margin-right: 15px;
+            margin-top: 2px;
+        }
+        
+        .why-us-list h3 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+        
+        .why-us-image {
+            flex: 1;
+        }
+        
+        .why-us-image img {
+            max-width: 100%;
+            border-radius: 15px;
+        }
+
+        /* Final CTA Section */
+        .cta-section {
             text-align: center;
         }
-        /* Dynamic elements */
-        .smooth-scroll {
-            scroll-behavior: smooth;
+
+        .cta-card {
+            background-color: var(--primary-dark-green);
+            color: var(--text-light);
+            padding: 60px 40px;
+            border-radius: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .cta-card h2 {
+            color: var(--text-light);
+            margin-bottom: 20px;
+        }
+        
+        .cta-card p {
+            opacity: 0.9;
+            margin-bottom: 30px;
+        }
+        
+        /* Footer */
+        .footer {
+            background-color: var(--primary-dark-green);
+            color: var(--text-light);
+            padding: 60px 0 30px;
+            text-align: center;
+        }
+        
+        .footer .logo {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .footer p {
+            margin-bottom: 20px;
+            opacity: 0.8;
+        }
+        
+        .footer-contact a {
+            color: var(--text-light);
+            text-decoration: none;
+            margin: 0 15px;
+            transition: color 0.3s;
+        }
+        
+        .footer-contact a:hover {
+            color: var(--cta-green);
+        }
+
+        .footer-contact i {
+            margin-right: 8px;
+        }
+        
+        .copyright {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            h1 { font-size: 2.5rem; }
+            h2 { font-size: 2rem; }
+            
+            .challenges-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            .why-us-content {
+                flex-direction: column;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                position: absolute;
+                top: 70px; /* Header height */
+                left: 0;
+                right: 0;
+                background-color: var(--primary-dark-green);
+                flex-direction: column;
+                text-align: center;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.5s ease-in-out;
+            }
+            
+            .nav-links.active {
+                max-height: 300px; /* Adjust as needed */
+            }
+
+            .nav-links li {
+                margin: 0;
+            }
+            
+            .nav-links a {
+                display: block;
+                padding: 15px;
+                border-bottom: 1px solid rgba(255,255,255,0.1);
+            }
+            
+            .hamburger {
+                display: block;
+            }
+            
+            .challenges-grid, .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero {
+                padding: 80px 0;
+            }
+            
+            section {
+                padding: 60px 0;
+            }
         }
     </style>
 </head>
-<body class="smooth-scroll">
+<body>
 
-    <!-- Navigation Bar -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href="#">
-                <img src="Gio Startup logo.png" alt="Gio Startup Logo">
+    <header class="header">
+        <div class="container navbar">
+            <a href="#" class="logo">
+                <img src="Gio Startup logo.png" alt="Gio Startup Logo" onerror="this.outerHTML='Gio Startup';">
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#vision">Vision</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#mission">Mission</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#values">Core Values</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#why-choose">Why Choose Us</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#clients">Target Clients</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <h1>Gio Startup</h1>
-            <p>Empowering Entrepreneurs with IT Projects, Business Consulting, Startup Funding, and Networking</p>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="section bg-light">
-        <div class="container">
-            <h2 class="text-center mb-4">Company Overview</h2>
-            <p>Gio Startup is a dynamic business consulting firm dedicated to empowering entrepreneurs, startups, and growing businesses to achieve sustainable success. With expertise in IT projects, business consulting, startup funding, and business networking, we provide end-to-end solutions that transform innovative ideas into thriving enterprises.</p>
-            <p>Our mission is to be the one-stop growth partner for startups and businesses, offering strategic guidance, technology solutions, funding support, and networking opportunities that help businesses scale with confidence.</p>
-        </div>
-    </section>
-
-    <!-- Vision Section -->
-    <section id="vision" class="section">
-        <div class="container">
-            <h2 class="text-center mb-4">Vision</h2>
-            <p>To become the most trusted and result-driven consulting partner for startups and businesses, enabling them to grow, innovate, and succeed in a highly competitive market.</p>
-        </div>
-    </section>
-
-    <!-- Mission Section -->
-    <section id="mission" class="section bg-light">
-        <div class="container">
-            <h2 class="text-center mb-4">Mission</h2>
-            <ul>
-                <li>To simplify the entrepreneurial journey by providing expert consulting and support.</li>
-                <li>To bridge the gap between ideas, funding, and execution.</li>
-                <li>To create a strong business ecosystem through collaboration, networking, and innovation.</li>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#why-us">Why Us</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
-        </div>
-    </section>
-
-    <!-- Core Values Section -->
-    <section id="values" class="section">
-        <div class="container">
-            <h2 class="text-center mb-4">Core Values</h2>
-            <div class="row">
-                <div class="col-md-6 core-value">
-                    <h4>Innovation</h4>
-                    <p>Delivering creative and effective solutions.</p>
-                </div>
-                <div class="col-md-6 core-value">
-                    <h4>Integrity</h4>
-                    <p>Building trust through transparency and ethics.</p>
-                </div>
-                <div class="col-md-6 core-value">
-                    <h4>Excellence</h4>
-                    <p>Committing to the highest quality standards.</p>
-                </div>
-                <div class="col-md-6 core-value">
-                    <h4>Collaboration</h4>
-                    <p>Growing together with partners, clients, and investors.</p>
-                </div>
-                <div class="col-md-6 core-value">
-                    <h4>Sustainability</h4>
-                    <p>Encouraging long-term, responsible business practices.</p>
-                </div>
+            <div class="hamburger" id="hamburger">
+                <i class="fas fa-bars"></i>
             </div>
         </div>
-    </section>
+    </header>
 
-    <!-- Services Section -->
-    <section id="services" class="section bg-light">
-        <div class="container">
-            <h2 class="text-center mb-4">Services We Offer</h2>
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="service-card">
-                        <h4>1. IT Project Consulting</h4>
-                        <ul>
-                            <li>Custom IT solutions for startups & enterprises</li>
-                            <li>Software, app & web development strategy</li>
-                            <li>Technology integration & digital transformation</li>
-                            <li>Project management & execution support</li>
-                        </ul>
+    <main>
+        <section class="hero" id="home">
+            <div class="container">
+                <h1>Helping Founders Raise Funds Easily Through <span>Government Grants & Angel Investors</span></h1>
+                <p>Expert guidance, complete documentation, and end-to-end support to help you secure funding for your startup. We turn months of struggle into a simple, guided funding journey.</p>
+                <a href="#contact" class="btn">Book a Free Consultation</a>
+            </div>
+        </section>
+
+        <section id="challenges">
+            <div class="container">
+                <h2>The Struggles Every <span>Founder Faces</span></h2>
+                <div class="challenges-grid">
+                    <div class="challenge-card">
+                        <div class="icon"><i class="fas fa-file-alt"></i></div>
+                        <h3>Funding Forms Are Confusing</h3>
+                        <p>Government schemes are hard to understand and even harder to apply for correctly.</p>
+                        <div class="stat">87%</div>
+                        <div class="stat-label">miss funding opportunities</div>
+                    </div>
+                    <div class="challenge-card">
+                        <div class="icon"><i class="fas fa-hourglass-half"></i></div>
+                        <h3>Time Drain for Founders</h3>
+                        <p>Hours spent on complex paperwork take you away from building your actual startup.</p>
+                        <div class="stat">6 months</div>
+                        <div class="stat-label">average process time</div>
+                    </div>
+                    <div class="challenge-card">
+                        <div class="icon"><i class="fas fa-question-circle"></i></div>
+                        <h3>No Expert Guidance</h3>
+                        <p>One small mistake can cost you your funding—without support, you're on your own.</p>
+                        <div class="stat">73%</div>
+                        <div class="stat-label">applications get rejected</div>
                     </div>
                 </div>
-                <div class="col-md-6">
+            </div>
+        </section>
+        
+        <section id="services">
+            <div class="container">
+                <h2>How Gio Startup <span>Simplifies Your Journey</span></h2>
+                <div class="services-grid">
                     <div class="service-card">
-                        <h4>2. Business Consulting</h4>
+                        <div class="icon"><i class="fas fa-lightbulb"></i></div>
+                        <h3>Business Consulting</h3>
                         <ul>
-                            <li>Business model development & strategy planning</li>
-                            <li>Market research & feasibility studies</li>
-                            <li>Branding & digital marketing guidance</li>
-                            <li>Operational excellence & process improvement</li>
+                           <li>Business model development & strategy planning</li>
+                           <li>Market research & feasibility studies</li>
+                           <li>Branding & digital marketing guidance</li>
+                           <li>Operational excellence & process improvement</li>
                         </ul>
                     </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="service-card">
-                        <h4>3. Startup Funding Assistance</h4>
+                     <div class="service-card">
+                        <div class="icon"><i class="fas fa-hand-holding-usd"></i></div>
+                        <h3>Startup Funding Assistance</h3>
                         <ul>
-                            <li>Connecting startups with VCs, angel investors, and funding networks</li>
-                            <li>Pitch deck preparation & business plan support</li>
-                            <li>Financial structuring & valuation advisory</li>
-                            <li>Guidance on government schemes & grants</li>
+                           <li>Connecting startups with VCs & angel investors</li>
+                           <li>Pitch deck preparation & business plan support</li>
+                           <li>Financial structuring & valuation advisory</li>
+                           <li>Guidance on government schemes & grants</li>
                         </ul>
                     </div>
-                </div>
-                <div class="col-md-6">
                     <div class="service-card">
-                        <h4>4. Business Networking</h4>
+                        <div class="icon"><i class="fas fa-laptop-code"></i></div>
+                        <h3>IT Project Consulting</h3>
                         <ul>
-                            <li>Connecting businesses with relevant industry partners</li>
-                            <li>Organizing startup networking events & investor meets</li>
-                            <li>Creating collaborative opportunities for growth</li>
-                            <li>Building strong B2B and B2C networks</li>
+                           <li>Custom IT solutions for startups & enterprises</li>
+                           <li>Software, app & web development strategy</li>
+                           <li>Technology integration & digital transformation</li>
+                           <li>Project management & execution support</li>
+                        </ul>
+                    </div>
+                    <div class="service-card">
+                        <div class="icon"><i class="fas fa-users"></i></div>
+                        <h3>Business Networking</h3>
+                        <ul>
+                           <li>Connecting businesses with relevant industry partners</li>
+                           <li>Organizing startup networking events & investor meets</li>
+                           <li>Creating collaborative opportunities for growth</li>
+                           <li>Building strong B2B and B2C networks</li>
                         </ul>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Why Choose Us Section -->
-    <section id="why-choose" class="section">
+        <section id="why-us">
+            <div class="container">
+                <h2>Why Choose <span>Gio Startup?</span></h2>
+                <div class="why-us-content">
+                    <div class="why-us-list">
+                        <ul>
+                            <li>
+                                <div class="icon"><i class="fas fa-check-circle"></i></div>
+                                <div>
+                                    <h3>End-to-End Solutions</h3>
+                                    <p>From idea validation to funding and scaling, we cover every step of your journey.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="icon"><i class="fas fa-check-circle"></i></div>
+                                <div>
+                                    <h3>Industry Expertise</h3>
+                                    <p>Our team consists of seasoned professionals with hands-on startup and corporate experience.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="icon"><i class="fas fa-check-circle"></i></div>
+                                <div>
+                                    <h3>Strong Investor Network</h3>
+                                    <p>Get access to our curated network of angel investors, VCs, and funding platforms.</p>
+                                </div>
+                            </li>
+                             <li>
+                                <div class="icon"><i class="fas fa-check-circle"></i></div>
+                                <div>
+                                    <h3>Your Growth Partner</h3>
+                                    <p>We don’t just consult; we partner with you on your journey to success and beyond.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="why-us-image">
+                        <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=2832&auto=format&fit=crop" alt="Business meeting">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-card">
+                    <h2>Find Your Perfect Growth Match Today!</h2>
+                    <p>Get matched with suitable government schemes, investors, and business strategies based on your unique profile and funding needs. Start your funding journey with comprehensive support from application to approval.</p>
+                    <a href="#contact" class="btn">Get in Touch Now</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer" id="contact">
         <div class="container">
-            <h2 class="text-center mb-4">Why Choose Gio Startup?</h2>
-            <ul>
-                <li><strong>End-to-End Solutions:</strong> From idea validation to funding and scaling.</li>
-                <li><strong>Industry Expertise:</strong> A team of seasoned professionals with hands-on startup & corporate experience.</li>
-                <li><strong>Strong Investor Network:</strong> Access to angel investors, VCs, and funding platforms.</li>
-                <li><strong>Tailored Consulting:</strong> Customized strategies based on your business needs.</li>
-                <li><strong>Growth Partner:</strong> We don’t just consult; we walk with you on your journey to success.</li>
-            </ul>
+            <a href="#" class="logo">Gio Startup</a>
+            <p>India's Founder-Friendly Consulting Partner</p>
+            <div class="footer-contact">
+                <a href="mailto:giostartupbusiness@gmail.com"><i class="fas fa-envelope"></i> giostartupbusiness@gmail.com</a>
+                <a href="tel:+918956176195"><i class="fas fa-phone"></i> +91 8956176195</a>
+            </div>
+            <div class="copyright">
+                © 2025 Gio Startup. All rights reserved. | Location: Mumbai
+            </div>
         </div>
-    </section>
+    </footer>
 
-    <!-- Target Clients Section -->
-    <section id="clients" class="section bg-light">
-        <div class="container">
-            <h2 class="text-center mb-4">Target Clients</h2>
-            <ul>
-                <li>Early-stage startups</li>
-                <li>Growing SMEs (Small & Medium Enterprises)</li>
-                <li>Entrepreneurs with innovative ideas</li>
-                <li>Businesses seeking funding or expansion</li>
-                <li>Companies looking for IT & digital transformation</li>
-            </ul>
-        </div>
-    </section>
+    <script>
+        // JavaScript for mobile navigation toggle
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('nav-links');
 
-    <!-- Contact Section -->
-    <section id="contact" class="section footer">
-        <div class="container">
-            <h2 class="text-center mb-4">Contact Us</h2>
-            <p>📌 Company Name: Gio Startup</p>
-            <p>📍 Location: Mumbai</p>
-            <p>📞 Phone: +91 8956176195</p>
-            <p>📧 Email: giostartupbusiness@gmail.com</p>
-        </div>
-    </section>
-
-    <!-- Bootstrap JS for dynamic features like navbar toggle -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-</body>
-</html>
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+        
+        // Close menu when a link is clicked
+        nav
