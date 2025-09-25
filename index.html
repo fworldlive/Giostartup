@@ -1,140 +1,135 @@
 <!doctype html>
-
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Gio Startup — Business Consulting & Startup Funding</title>
-  <meta name="description" content="Gio Startup — IT projects, business consulting, startup funding and networking. Your growth partner." />  <!-- Google Font -->  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">  <!-- Fav / logo placeholder -->  <link rel="icon" href="/assets/logo.png" />  <style>
-    :root{
-      --bg:#0f1724; /* dark navy */
-      --card:#0b1220;
-      --accent:#00a896; /* teal */
-      --muted:#94a3b8;
-      --glass: rgba(255,255,255,0.04);
-      --container:1100px;
-      color-scheme: dark;
-    }
-    *{box-sizing:border-box}
-    html,body{height:100%;margin:0;font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;color:#e6eef8;background:linear-gradient(180deg,#071024 0%, #07182a 60%);}
-    a{color:inherit;text-decoration:none}
-    .container{max-width:var(--container);margin:0 auto;padding:0 20px}
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Gio Startup — Business Consulting & Startup Funding</title>
+<meta name="description" content="Gio Startup — IT projects, business consulting, startup funding and networking. Your growth partner." />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<link rel="icon" href="/assets/logo.png" />
+<style>
+:root{
+  --bg:#0f1724;
+  --card:#0b1220;
+  --accent:#00a896;
+  --muted:#94a3b8;
+  --glass: rgba(255,255,255,0.04);
+  --container:1100px;
+  color-scheme: dark;
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;color:#e6eef8;background:linear-gradient(180deg,#071024 0%, #07182a 60%);}
+a{color:inherit;text-decoration:none}
 
-    /* NAV */
-    header{position:sticky;top:0;z-index:40;background:linear-gradient(90deg, rgba(7,16,36,0.65), rgba(7,24,42,0.35));backdrop-filter: blur(6px);border-bottom:1px solid rgba(255,255,255,0.03)}
-    .nav{display:flex;align-items:center;justify-content:space-between;height:70px}
-    .brand{display:flex;align-items:center;gap:12px}
-    .brand img{width:46px;height:46px;object-fit:contain;border-radius:8px}
-    .brand h1{font-size:18px;margin:0;font-weight:700}
-    nav ul{display:flex;gap:18px;align-items:center;margin:0;padding:0;list-style:none}
-    nav a{font-weight:600;color:var(--muted);padding:8px 10px;border-radius:8px}
-    nav a:hover{color:#fff;background:rgba(255,255,255,0.03)}
-    .cta{background:linear-gradient(90deg,var(--accent),#0077b6);padding:9px 14px;border-radius:10px;color:#021121;font-weight:700}
+/* Container */
+.container{max-width:var(--container);margin:0 auto;padding:0 20px}
 
-    /* Mobile */
-    .menu-toggle{display:none}
-    @media (max-width:900px){
-      nav ul{display:none}
-      .menu-toggle{display:block;background:transparent;border:1px solid rgba(255,255,255,0.04);padding:8px;border-radius:8px}
-    }
+/* Header */
+header{position:sticky;top:0;z-index:40;background:linear-gradient(90deg, rgba(7,16,36,0.85), rgba(7,24,42,0.7));backdrop-filter: blur(6px);border-bottom:1px solid rgba(255,255,255,0.03)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:70px}
+.brand{display:flex;align-items:center;gap:12px}
+.brand img{width:50px;height:50px;object-fit:contain;border-radius:8px}
+.brand h1{font-size:18px;margin:0;font-weight:700}
+nav ul{display:flex;gap:18px;align-items:center;margin:0;padding:0;list-style:none}
+nav a{font-weight:600;color:var(--muted);padding:8px 10px;border-radius:8px}
+nav a:hover{color:#fff;background:rgba(255,255,255,0.03)}
+.cta{background:linear-gradient(90deg,var(--accent),#0077b6);padding:9px 14px;border-radius:10px;color:#021121;font-weight:700}
 
-    /* HERO */
-    .hero{padding:64px 0;display:grid;grid-template-columns:1fr 420px;gap:30px;align-items:center}
-    .hero-left h2{margin:0;font-size:34px;line-height:1.02}
-    .eyebrow{display:inline-block;background:var(--glass);padding:6px 10px;border-radius:999px;color:var(--accent);font-weight:700;margin-bottom:16px}
-    .lead{color:var(--muted);margin:18px 0;font-size:16px}
-    .hero-cta{display:flex;gap:12px;margin-top:16px}
-    .hero-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:20px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
+/* Mobile menu */
+.menu-toggle{display:none;cursor:pointer;background:transparent;border:1px solid rgba(255,255,255,0.04);padding:8px;border-radius:8px}
+@media(max-width:900px){
+  nav ul{display:none;flex-direction:column;gap:0;width:100%;background:var(--bg);position:absolute;top:70px;left:0;padding:10px 0;border-top:1px solid rgba(255,255,255,0.03)}
+  nav li{width:100%}
+  nav a{display:block;width:100%;padding:10px 20px}
+  .menu-toggle{display:block}
+}
 
-    /* service grid */
-    .services{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin:36px 0}
-    .card{background:var(--card);padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
-    .card h3{margin:0 0 8px 0}
-    .muted{color:var(--muted);font-size:14px}
+/* Hero */
+.hero{padding:64px 0;display:grid;grid-template-columns:1fr 420px;gap:30px;align-items:center}
+.hero-left h2{margin:0;font-size:32px;line-height:1.1}
+.eyebrow{display:inline-block;background:var(--glass);padding:6px 10px;border-radius:999px;color:var(--accent);font-weight:700;margin-bottom:16px}
+.lead{color:var(--muted);margin:18px 0;font-size:16px}
+.hero-cta{display:flex;gap:12px;margin-top:16px}
+.hero-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:20px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
 
-    @media (max-width:1100px){.hero{grid-template-columns:1fr}} 
-    @media (max-width:900px){.services{grid-template-columns:repeat(2,1fr)}}
-    @media (max-width:520px){.services{grid-template-columns:1fr}.hero{padding:36px 0}}
+/* Services */
+.services{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin:36px 0}
+.card{background:var(--card);padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
+.card h3{margin:0 0 8px 0}
+.muted{color:var(--muted);font-size:14px}
 
-    /* counters */
-    .metrics{display:flex;gap:18px;margin:18px 0}
-    .metric{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:18px;border-radius:12px;min-width:140px;text-align:center}
-    .metric h4{margin:0;font-size:22px}
-    .metric p{margin:6px 0 0;color:var(--muted)}
+/* Responsive */
+@media (max-width:1100px){.hero{grid-template-columns:1fr}}
+@media (max-width:900px){.services{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:520px){.services{grid-template-columns:1fr}.hero{padding:36px 0}}
 
-    /* sections */
-    section{padding:56px 0}
-    .section-title{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
-    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-    @media (max-width:900px){.grid-3{grid-template-columns:1fr}}
+/* Counters */
+.metrics{display:flex;gap:18px;margin:18px 0;flex-wrap:wrap}
+.metric{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:18px;border-radius:12px;min-width:140px;text-align:center}
+.metric h4{margin:0;font-size:22px}
+.metric p{margin:6px 0 0;color:var(--muted)}
 
-    /* testimonials */
-    .testi{display:flex;gap:14px;align-items:center}
-    .avatar{width:56px;height:56px;border-radius:12px;background:linear-gradient(180deg,#112233,#0b1a2b);display:flex;align-items:center;justify-content:center;font-weight:700}
+/* Sections */
+section{padding:56px 0}
+.section-title{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px;flex-wrap:wrap}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+@media(max-width:900px){.grid-3{grid-template-columns:1fr}}
 
-    /* contact */
-    .contact-grid{display:grid;grid-template-columns:1fr 420px;gap:18px}
-    @media (max-width:900px){.contact-grid{grid-template-columns:1fr}}
-    form input, form textarea{width:100%;padding:12px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:rgba(255,255,255,0.02);color:#e6eef8}
-    form button{margin-top:12px;padding:12px 14px;border-radius:8px;border:0;font-weight:700;background:linear-gradient(90deg,var(--accent),#0077b6);cursor:pointer}
+/* Contact */
+.contact-grid{display:grid;grid-template-columns:1fr 420px;gap:18px}
+@media(max-width:900px){.contact-grid{grid-template-columns:1fr}}
+form input, form textarea{width:100%;padding:12px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:rgba(255,255,255,0.02);color:#e6eef8}
+form button{margin-top:12px;padding:12px 14px;border-radius:8px;border:0;font-weight:700;background:linear-gradient(90deg,var(--accent),#0077b6);cursor:pointer}
 
-    /* footer */
-    footer{padding:28px 0;color:var(--muted);border-top:1px solid rgba(255,255,255,0.03)}
+/* Footer */
+footer{padding:28px 0;color:var(--muted);border-top:1px solid rgba(255,255,255,0.03);text-align:center}
 
-    /* small animations */
-    .fade-in{opacity:0;transform:translateY(10px);transition:all 600ms ease-out}
-    .visible{opacity:1;transform:none}
-
-  </style></head>
-<body><header>
-  <div class="container nav">
-    <div class="brand">
-      <img src="/assets/logo.png" alt="Gio Startup logo" />
-      <div>
-        <h1>Gio Startup</h1>
-        <div style="font-size:12px;color:var(--muted)">Business Consulting • Startup Funding • IT Projects</div>
-      </div>
-    </div><nav>
-  <button class="menu-toggle" id="menuToggle">Menu</button>
-  <ul id="navList">
-    <li><a href="#home">Home</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="#services">Services</a></li>
-    <li><a href="#clients">Clients</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-</nav>
-
-<a class="cta" href="#contact">Get Consultation</a>
-
+/* Animations */
+.fade-in{opacity:0;transform:translateY(10px);transition:all 600ms ease-out}
+.visible{opacity:1;transform:none}
+</style>
+</head>
+<body>
+<header>
+<div class="container nav">
+  <div class="brand">
+    <img src="/assets/logo.png" alt="Gio Startup logo" />
+    <div>
+      <h1>Gio Startup</h1>
+      <div style="font-size:12px;color:var(--muted)">Business Consulting • Startup Funding • IT Projects</div>
+    </div>
   </div>
-</header><main class="container">
-  <!-- HERO -->
-  <section id="home" class="hero">
-    <div class="hero-left">
-      <span class="eyebrow">Launch. Fund. Scale.</span>
-      <h2 class="fade-in">Gio Startup — your growth partner for IT projects, funding and business strategy.</h2>
-      <p class="lead muted fade-in">We help founders and companies validate ideas, build reliable tech, raise capital and create meaningful industry connections. End-to-end services with a clear focus on results.</p><div class="hero-cta">
+  <nav>
+    <button class="menu-toggle" id="menuToggle">☰ Menu</button>
+    <ul id="navList">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#clients">Clients</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+  <a class="cta" href="#contact">Get Consultation</a>
+</div>
+</header>
+
+<main class="container">
+<!-- HERO -->
+<section id="home" class="hero">
+<div class="hero-left">
+  <span class="eyebrow">Launch. Fund. Scale.</span>
+  <h2 class="fade-in">Gio Startup — your growth partner for IT projects, funding and business strategy.</h2>
+  <p class="lead muted fade-in">We help founders and companies validate ideas, build reliable tech, raise capital and create meaningful industry connections. End-to-end services with a clear focus on results.</p>
+  <div class="hero-cta">
     <a class="cta" href="#services">Explore Services</a>
     <a style="padding:9px 14px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);font-weight:700" href="mailto:giostartupbusiness@gmail.com">Contact Sales</a>
   </div>
-
   <div class="metrics">
-    <div class="metric card">
-      <h4 id="count1">0</h4>
-      <p>Projects Delivered</p>
-    </div>
-    <div class="metric card">
-      <h4 id="count2">0</h4>
-      <p>Startups Funded</p>
-    </div>
-    <div class="metric card">
-      <h4 id="count3">0</h4>
-      <p>Trusted Partners</p>
-    </div>
+    <div class="metric card"><h4 id="count1">0</h4><p>Projects Delivered</p></div>
+    <div class="metric card"><h4 id="count2">0</h4><p>Startups Funded</p></div>
+    <div class="metric card"><h4 id="count3">0</h4><p>Trusted Partners</p></div>
   </div>
 </div>
-
 <aside class="hero-card fade-in">
   <h3>Quick Start Offer</h3>
   <p class="muted">Complimentary 30-minute strategy call for first-time clients. Limited slots every month.</p>
@@ -145,180 +140,157 @@
   </ul>
   <a href="#contact" style="display:inline-block;margin-top:12px" class="cta">Book a Call</a>
 </aside>
+</section>
 
-  </section>  <!-- ABOUT -->  <section id="about">
-    <div class="section-title">
-      <h2>About Gio Startup</h2>
-      <div class="muted">Mumbai • Business Consulting • IT Projects</div>
-    </div><div class="grid-3">
-  <div class="card fade-in">
-    <h3>Who we are</h3>
-    <p class="muted">Gio Startup is a boutique consulting firm focused on delivering pragmatic strategies, technology execution and capital access for startups and SMEs. Our team combines corporate experience with startup grit.</p>
-  </div>
-
-  <div class="card fade-in">
-    <h3>Our approach</h3>
-    <p class="muted">We prioritize measurable outcomes. Start with validation, build with clear milestones, and raise capital when traction shows. You get a tailored roadmap and hands-on support.</p>
-  </div>
-
-  <div class="card fade-in">
-    <h3>Our promise</h3>
-    <p class="muted">Transparent fees, clear deliverables and a commitment to growing your business responsibly. We act as your partner, not just a vendor.</p>
-  </div>
+<!-- ABOUT -->
+<section id="about">
+<div class="section-title">
+  <h2>About Gio Startup</h2>
+  <div class="muted">Mumbai • Business Consulting • IT Projects</div>
 </div>
-
-  </section>  <!-- SERVICES -->  <section id="services">
-    <div class="section-title">
-      <h2>Services</h2>
-      <div class="muted">Tailored services to fit each growth stage</div>
-    </div><div class="services">
-  <div class="card fade-in">
-    <h3>IT Project Consulting</h3>
-    <p class="muted">Architecture, product management, development partner selection, and delivery oversight for web & mobile projects.</p>
-  </div>
-
-  <div class="card fade-in">
-    <h3>Business Consulting</h3>
-    <p class="muted">Business model design, market research, GTM strategy, branding and operational improvements.</p>
-  </div>
-
-  <div class="card fade-in">
-    <h3>Startup Funding</h3>
-    <p class="muted">Investor introductions, pitch deck design, financial modelling and negotiation support.</p>
-  </div>
-
-  <div class="card fade-in">
-    <h3>Business Networking</h3>
-    <p class="muted">Curated events, investor meets and partnership facilitation to help you scale faster.</p>
-  </div>
+<div class="grid-3">
+<div class="card fade-in">
+<h3>Who we are</h3>
+<p class="muted">Gio Startup is a boutique consulting firm focused on delivering pragmatic strategies, technology execution and capital access for startups and SMEs. Our team combines corporate experience with startup grit.</p>
 </div>
-
-<div style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap">
-  <a class="cta" href="#contact">Request Proposal</a>
-  <a style="padding:9px 14px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);font-weight:700" href="#">Download Brochure (PDF)</a>
+<div class="card fade-in">
+<h3>Our approach</h3>
+<p class="muted">We prioritize measurable outcomes. Start with validation, build with clear milestones, and raise capital when traction shows. You get a tailored roadmap and hands-on support.</p>
 </div>
-
-  </section>  <!-- CLIENTS / TESTIMONIALS -->  <section id="clients">
-    <div class="section-title">
-      <h2>Clients & Partners</h2>
-      <div class="muted">Trusted by startups, SMEs and enterprise teams</div>
-    </div><div class="grid-3">
-  <div class="card fade-in">
-    <h3>Partner Network</h3>
-    <p class="muted">Access to VC networks, angel groups and strategic partners across tech and finance.</p>
-  </div>
-
-  <div class="card fade-in">
-    <h3>Success Stories</h3>
-    <p class="muted">We helped early-stage startups refine product-market fit and secure seed round investments.</p>
-  </div>
-
-  <div class="card fade-in">
-    <h3>Events</h3>
-    <p class="muted">Regular investor meets, workshops and demo days to connect founders with capital and mentors.</p>
-  </div>
+<div class="card fade-in">
+<h3>Our promise</h3>
+<p class="muted">Transparent fees, clear deliverables and a commitment to growing your business responsibly. We act as your partner, not just a vendor.</p>
 </div>
-
-  </section>  <!-- CONTACT -->  <section id="contact">
-    <div class="section-title">
-      <h2>Contact</h2>
-      <div class="muted">Start a conversation — we’ll get back within 48 hours</div>
-    </div><div class="contact-grid">
-  <div>
-    <div class="card fade-in">
-      <h3>Get in touch</h3>
-      <p class="muted">Tell us about your project. For urgent requests call or WhatsApp.</p>
-
-      <p style="margin:10px 0"><strong>Phone:</strong> +91 8956176195<br><strong>Email:</strong> <a href="mailto:giostartupbusiness@gmail.com">giostartupbusiness@gmail.com</a><br><strong>Location:</strong> Mumbai, India</p>
-
-      <div style="margin-top:12px">
-        <strong>Office hours</strong>
-        <p class="muted">Mon - Fri — 10:00 to 18:00 IST</p>
-      </div>
-    </div>
-
-    <div style="margin-top:18px" class="card fade-in">
-      <h3>Follow</h3>
-      <p class="muted">LinkedIn • Twitter • Instagram</p>
-    </div>
-  </div>
-
-  <aside class="card fade-in">
-    <h3>Send a message</h3>
-    <form id="contactForm" onsubmit="return false;">
-      <label class="muted">Name</label>
-      <input id="name" placeholder="Your full name" required />
-
-      <label class="muted" style="margin-top:8px">Email</label>
-      <input id="email" type="email" placeholder="name@company.com" required />
-
-      <label class="muted" style="margin-top:8px">Message</label>
-      <textarea id="message" rows="6" placeholder="Tell us about your project" required></textarea>
-
-      <button id="sendBtn">Send Message</button>
-      <p id="formResp" style="margin-top:8px;color:var(--muted);font-size:14px"></p>
-    </form>
-  </aside>
 </div>
+</section>
 
-  </section></main><footer>
-  <div class="container" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px">
-    <div>© <strong>Gio Startup</strong> — All rights reserved.</div>
-    <div class="muted">Designed for founders & growth teams • Mumbai</div>
-  </div>
-</footer><script>
-  // Mobile menu
-  const toggle = document.getElementById('menuToggle');
-  const navList = document.getElementById('navList');
-  toggle && toggle.addEventListener('click', () => {
-    if(navList.style.display === 'flex') navList.style.display = '';
-    else navList.style.display = 'flex';
+<!-- SERVICES -->
+<section id="services">
+<div class="section-title">
+<h2>Services</h2>
+<div class="muted">Tailored services to fit each growth stage</div>
+</div>
+<div class="services">
+<div class="card fade-in">
+<h3>IT Project Consulting</h3>
+<p class="muted">Architecture, product management, development partner selection, and delivery oversight for web & mobile projects.</p>
+</div>
+<div class="card fade-in">
+<h3>Business Consulting</h3>
+<p class="muted">Business model design, market research, GTM strategy, branding and operational improvements.</p>
+</div>
+<div class="card fade-in">
+<h3>Startup Funding</h3>
+<p class="muted">Investor introductions, pitch deck design, financial modelling and negotiation support.</p>
+</div>
+<div class="card fade-in">
+<h3>Business Networking</h3>
+<p class="muted">Curated events, investor meets and partnership facilitation to help you scale faster.</p>
+</div>
+</div>
+</section>
+
+<!-- CLIENTS -->
+<section id="clients">
+<div class="section-title">
+<h2>Clients & Partners</h2>
+<div class="muted">Trusted by startups, SMEs and enterprise teams</div>
+</div>
+<div class="grid-3">
+<div class="card fade-in"><h3>Partner Network</h3><p class="muted">Access to VC networks, angel groups and strategic partners across tech and finance.</p></div>
+<div class="card fade-in"><h3>Success Stories</h3><p class="muted">We helped early-stage startups refine product-market fit and secure seed round investments.</p></div>
+<div class="card fade-in"><h3>Events</h3><p class="muted">Regular investor meets, workshops and demo days to connect founders with capital and mentors.</p></div>
+</div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+<div class="section-title">
+<h2>Contact</h2>
+<div class="muted">Start a conversation — we’ll get back within 48 hours</div>
+</div>
+<div class="contact-grid">
+<div>
+<div class="card fade-in">
+<h3>Get in touch</h3>
+<p class="muted">Tell us about your project. For urgent requests call or WhatsApp.</p>
+<p style="margin:10px 0"><strong>Phone:</strong> +91 8956176195<br><strong>Email:</strong> <a href="mailto:giostartupbusiness@gmail.com">giostartupbusiness@gmail.com</a><br><strong>Location:</strong> Mumbai, India</p>
+</div>
+</div>
+<aside class="card fade-in">
+<h3>Send a message</h3>
+<form id="contactForm" onsubmit="return false;">
+<label class="muted">Name</label>
+<input id="name" placeholder="Your full name" required />
+<label class="muted" style="margin-top:8px">Email</label>
+<input id="email" type="email" placeholder="name@company.com" required />
+<label class="muted" style="margin-top:8px">Message</label>
+<textarea id="message" rows="6" placeholder="Tell us about your project" required></textarea>
+<button id="sendBtn">Send Message</button>
+<p id="formResp" style="margin-top:8px;color:var(--muted);font-size:14px"></p>
+</form>
+</aside>
+</div>
+</section>
+</main>
+
+<footer>
+<div class="container">
+© <strong>Gio Startup</strong> — All rights reserved.
+</div>
+</footer>
+
+<script>
+// Mobile menu toggle
+const toggle = document.getElementById('menuToggle');
+const navList = document.getElementById('navList');
+toggle && toggle.addEventListener('click', () => {
+  if(navList.style.display === 'flex') navList.style.display = '';
+  else navList.style.display = 'flex';
+});
+
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click', e=>{
+    e.preventDefault();
+    const t = document.querySelector(a.getAttribute('href'));
+    if(t) t.scrollIntoView({behavior:'smooth',block:'start'});
+    if(window.innerWidth <= 900) navList.style.display='';
   });
+});
 
-  // Smooth scroll
-  document.querySelectorAll('a[href^="#"]').forEach(a=>{
-    a.addEventListener('click', e=>{
-      e.preventDefault();
-      const t = document.querySelector(a.getAttribute('href'));
-      if(t) t.scrollIntoView({behavior:'smooth',block:'start'});
-    })
-  });
+// Scroll reveal
+const observer = new IntersectionObserver((entries)=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting) entry.target.classList.add('visible');
+  })
+},{threshold:0.12});
+document.querySelectorAll('.fade-in').forEach(el=>observer.observe(el));
 
-  // Scroll reveal
-  const observer = new IntersectionObserver((entries)=>{
-    entries.forEach(entry=>{
-      if(entry.isIntersecting) entry.target.classList.add('visible');
-    })
-  },{threshold:0.12});
-  document.querySelectorAll('.fade-in').forEach(el=>observer.observe(el));
+// Counters
+function animateCount(id, end, duration=1500){
+  const el = document.getElementById(id); if(!el) return;
+  let start = 0; const stepTime = Math.max(20, Math.floor(duration / end));
+  const timer = setInterval(()=>{
+    start += Math.ceil(end / (duration/stepTime));
+    if(start >= end){el.textContent=end;clearInterval(timer);} else el.textContent=start;
+  }, stepTime);
+}
+setTimeout(()=>{ animateCount('count1',128); animateCount('count2',24); animateCount('count3',56); },600);
 
-  // Counters (simple animation)
-  function animateCount(id, end, duration=1500){
-    const el = document.getElementById(id); if(!el) return;
-    let start = 0; const stepTime = Math.max(20, Math.floor(duration / end));
-    const timer = setInterval(()=>{
-      start += Math.ceil(end / (duration/stepTime));
-      if(start >= end){el.textContent = end; clearInterval(timer);} else el.textContent = start;
-    }, stepTime);
-  }
-  // Example target values - change to real numbers
-  setTimeout(()=>{ animateCount('count1', 128); animateCount('count2', 24); animateCount('count3', 56); }, 600);
-
-  // Contact form basic handling (no backend) - prepares a mailto link
-  const form = document.getElementById('contactForm');
-  form && form.addEventListener('submit', ()=>{
-    const name = document.getElementById('name').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const message = document.getElementById('message').value.trim();
-    const resp = document.getElementById('formResp');
-    if(!name || !email || !message){ resp.textContent = 'Please fill all fields.'; return; }
-    const subject = encodeURIComponent('Website enquiry from ' + name);
-    const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`);
-    window.location.href = `mailto:giostartupbusiness@gmail.com?subject=${subject}&body=${body}`;
-    resp.textContent = 'Opening your email client. If nothing opened, please email giostartupbusiness@gmail.com';
-  });
-
-  // Accessibility: keyboard focus for nav
-  document.addEventListener('keydown', e=>{ if(e.key==='Escape') navList.style.display=''; });
-</script></body>
+// Contact form
+const form = document.getElementById('contactForm');
+form && form.addEventListener('submit', ()=>{
+  const name = document.getElementById('name').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const message = document.getElementById('message').value.trim();
+  const resp = document.getElementById('formResp');
+  if(!name || !email || !message){ resp.textContent='Please fill all fields.'; return; }
+  const subject = encodeURIComponent('Website enquiry from '+name);
+  const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`);
+  window.location.href=`mailto:giostartupbusiness@gmail.com?subject=${subject}&body=${body}`;
+  resp.textContent='Opening your email client. If nothing opened, please email giostartupbusiness@gmail.com';
+});
+</script>
+</body>
 </html>
